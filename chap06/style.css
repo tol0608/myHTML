@@ -1,0 +1,33 @@
+* {
+    /*margin: 0;*/
+}
+
+p {
+    color: #004455;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.5s;
+    cursor: none;
+}
+
+p:hover {
+    color: #eeeeee;
+    background-color: #004455;
+}
+
+.con {
+    background: #666666; !important;
+}
+
+.con2 {
+    transform: rotate(0deg);
+}
+
+div {
+    color: blue;
+}
+
+#target {
+    background: #1fa8f8;
+}
