@@ -1,0 +1,39 @@
+:root {
+  --main-bg-color: #eee;
+}
+
+body{
+  background-color: #222222;
+}
+
+table, th, td {
+  border:1px solid #ccc;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding:10px 20px;
+}
+
+
+#container {
+  width: 600px;
+  border: none;
+  margin: 0 auto;
+}
+
+#container div {
+  border: 1px solid #000000;
+  padding: 15px 20px;
+  margin: 20px 0;
+  background: var(--main-bg-color);
+}
+
+#container div:first-child {
+  border-radius: 15px 15px 0 0;
+
+}
+
+#container div:last-child {
+  border-radius: 0 0 15px 15px;
+}

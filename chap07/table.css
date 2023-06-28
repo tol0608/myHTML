@@ -1,0 +1,33 @@
+table {
+    border: 2px solid #222222;
+    caption-side: bottom;
+}
+
+th {
+    padding: 5px 0;
+    border-bottom: 1px dotted #222222;
+    border-right: 1px dotted #222222;
+}
+
+th:last-child {
+    border-right: none;
+}
+
+td {
+    padding: 10px 15px;
+    border-right: 1px dotted #222222;
+    border-bottom: 1px dotted #222222;
+}
+
+td:last-child {
+    border-right: none;
+    /*border-bottom: none*/
+}
+
+tbody tr:nth-child(3) td:first-child {
+    border-bottom: none;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
