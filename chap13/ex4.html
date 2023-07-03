@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 아래 코드는 웹페이지를 전부 로딩 후, 스크립트를 읽게 해주는 코드입니다.
+        window.onload = function () {
+            var heading = document.querySelector("#heading");
+            heading.onclick = function () {
+                heading.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+<h1 id="heading">자바스크립트</h1>
+<hr>
+<p>위 텍스트를 클릭해보삼요</p>
+</body>
+</html>

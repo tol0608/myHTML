@@ -1,0 +1,52 @@
+#container {
+    width: 1000px;
+    margin: 20px auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.prod-list {
+    list-style: none;
+    padding: 0;
+}
+
+.prod-list li {
+    position: relative;
+    float: left;
+    padding: 0;
+    margin: 10px;
+}
+
+.prod-list img {
+    margin: 0;
+    padding: 0;
+    float: left;
+    z-index: 5;
+}
+
+.prod-list .caption h2, .prod-list .caption p {
+    color: #cccccc;
+    text-align: center;
+}
+
+.prod-list .caption {
+    position: absolute;
+    top: 200px;
+    width: 300px;
+    height: 200px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.prod-list .caption h2 {
+    margin-top: 45px;
+}
+
+.prod-list li:hover .caption {
+    opacity: 1;
+    transform: translateY(-200px);
+}
