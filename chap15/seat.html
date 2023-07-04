@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자리 배치도</title>
+    <script>
+        var memNum = prompt('입장객 수를 입력하삼요', 20);
+        var colNum = prompt('한줄에 앉을 사람수를 입력하삼요', 5);
+        var rowNum = memNum / colNum;
+        rowNum = Number(Math.ceil(rowNum));
+
+        console.log('총 필요한 의자 줄 수는 ' + rowNum + '줄 임다');
+
+        if (memNum % colNum == 0) {
+            rowNum = parseInt(memNum / colNum);
+        } else {
+            rowNum = parseInt(memNum / colNum) + 1;
+        }
+
+        console.log('총 필요한 의자 줄 수는 ' + rowNum + '줄 임다');
+    </script>
+</head>
+<body>
+<h1>자리 배치도</h1>
+
+</body>
+</html>
