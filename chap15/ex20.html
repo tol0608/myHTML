@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        사용자에게 날짜를 입력받아 입력받은 날짜를 요일로 반환하는 코드
+        */
+        var totalDays = 0;
+        var monthLastDays = [-1, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        var week = ['일', '월', '화', '수', '목', '금', '토'];
+        var ymd = prompt('몇년? 몇월 몇일?', '2023 7 5');
+        ymd = ymd.split(' ');
+        for (var i = 0; i < ymd.length; i++) {
+            ymd[i] = Number(ymd[i]);
+        }
+        for (var i = 1; i < ymd[0]; i++) {
+            if (i % 4 == 0 && i % 100 != 0 || i % 400 == 0) {
+                totalDays = 366;
+            } else {
+                totalDays = 365;
+            }
+        }
+        if (ymd[0] % 4 == 0 && ymd[0] % 100 != 0 || ymd[0] % 400 == 0) {
+            monthLastDays[2] = 29;
+        }
+        for (var i = 1; i < ymd[1]; i++) {
+            totalDays += monthLastDays[i];
+        }
+
+        totalDays += ymd[2];
+        console.log('입력하신 ' + ymd[0] + '년' + ymd[1] + '월' + ymd[2] + '일은' + week[totalDays % 7] + '요일 입니다. ')
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr = ['사과', '배', '딸기', '배', '포도', '복숭아'];
+
+        // arr의 모든 요소의 값을 body 태그의 내용으로 삽입하는 코드 작성
+
+        var list = '<ul>';
+        for (var i in arr) {
+            list += '<li>' + arr[i] + '</li>';
+        }
+        list += '</ul>';
+
+        window.onload = function () {
+            document.body.innerHTML += list;
+            // inerHTML에 +=를 쓰면 어팬드가 됨
+
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

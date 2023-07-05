@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 이길때까지 가위바위보 하는 코드작성
+        var user, com = 0;
+        var win = false;
+
+        do {
+            com = Math.floor(Math.random() * 3);
+            user = parseInt(prompt('가위 바위 보', 1)) - 1;
+
+            switch (user) {
+                case 0:
+                    userStr = "가위";
+                    break;
+                case 1:
+                    userStr = "바위";
+                    break;
+                case 2:
+                    userStr = "보";
+                    break;
+                default:
+                    console.log("가위바위보에서 선택해주세요");
+                    continue;
+            }
+
+            switch (com) {
+                case 0:
+                    comStr = "가위";
+                    break;
+                case 1:
+                    comStr = "바위";
+                    break;
+                case 2:
+                    comStr = "보";
+                    break;
+            }
+
+            switch (user - com) {
+                case 0:
+                    result = "비김";
+                    break;
+                case 1:
+                case -2:
+                    result = "이김";
+                    win = true;
+                    break;
+                case -1:
+                case 2:
+                    result = "짐";
+                    break;
+            }
+        } while (!win);
+
+        console.log(result);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

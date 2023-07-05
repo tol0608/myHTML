@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 이길때까지 가위바위보 하는 코드작성
+        var kbb = ['가위', '바위', '보'];
+        var user, com, result, msg = 0;
+        var win = false;
+
+        do {
+            user = prompt('가위 바위 보', 1) - 1;
+            com = Math.floor(Math.random() * 3);
+
+            switch (user - com) {
+                case 0:
+                    result = "비김";
+                    break;
+                case 1:
+                case -2:
+                    result = "이김";
+                    win = true;
+                    break;
+                case -1:
+                case 2:
+                    result = "짐";
+                    break;
+            }
+            msg = '사용자 :' + kbb[user] + '컴퓨터 :' + kbb[com] + ' 결과 ' + result;
+        } while (!win);
+
+        console.log(result);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

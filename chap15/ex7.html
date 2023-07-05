@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var dan = prompt('구구단의 단을 입력하삼요', 3);
+        dan = Number(dan);
+    </script>
+    <style>
+        table, td {
+            padding: 10px;
+            text-align: center;
+            border: 2px solid gray;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<h1>구구단</h1>
+<hr>
+
+<table>
+    <script>
+        for (var i = 1; i <= 9; i++) {
+            document.write('<tr> <td>' + dan + ' * ' + i + ' = ' + (dan * i) + '</td> </tr>');
+        }
+    </script>
+</table>
+
+</body>
+</html>

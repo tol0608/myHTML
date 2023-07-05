@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var gugu = '<table>';
+
+        for (var num = 0; num <= 9; num++) {
+            gugu += '<tr>';
+
+            for (var dan = 2; dan <= 9; dan++) {
+                if (num == 0) {
+                    gugu += '<th>' + dan + '단 </th>';
+                } else {
+                    gugu += '<td>' + dan + ' * ' + num + ' = ' + (dan * num) + '</td>'
+                }
+            }
+            gugu += '</tr>';
+        }
+        gugu += '</table>'
+
+        window.onload = function () {
+            document.body.innerHTML += gugu;
+            // inerHTML에 +=를 쓰면 어팬드가 됨
+
+        }
+    </script>
+    <style>
+        table, td {
+            padding: 10px;
+            text-align: center;
+            border: 2px solid gray;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
