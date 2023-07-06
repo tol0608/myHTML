@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 두개의 숫자, 문자, 논리값을 입력받아 더 큰값을 반환하는 max 함수를 만들고 확인하는 코드
+        function max(in1, in2) {
+            var result = 0;
+
+            if (((typeof in1) === 'number' || (typeof in1) === 'boolean' || (typeof in1) === 'string') && (typeof in1) === (typeof in2)) {
+                result = in1 >= in2 ? in1 : in2;
+            } else {
+                result += -1;
+            }
+            return result;
+        }
+
+        console.log(max(10, 20));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

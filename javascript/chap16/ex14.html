@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let num1 = 10;
+
+        function func() {
+            let num2 = 20;
+            if (true) {
+                let num3 = 30;
+                console.log('num3 : ' + num3)  // 1. num3 : 30 -> block scope in function
+            }
+            console.log('num2 : ' + num2);      // 2. num2 : 20 -> local variable
+            // console.log('num3 : ' + num3);      // 3. error
+        }
+        func();
+
+        if (true) {
+            let num4 = 40;
+            console.log('num4 : ' + num4)   // 3. num4 : 40 -> block scope in function
+        }
+
+        console.log('num1 : ' + num1);      // 4. num1 : 10 -> global variable
+        // console.log('num4 : ' + num4);      // 5. error
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
