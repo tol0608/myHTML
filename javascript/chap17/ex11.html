@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var person = {
+            name: 'lee',
+            age: 25,
+            gender: 'male',
+            eat: function () {
+                console.log(this.name + ' 밥먹어')
+            }
+        };
+
+
+        // person 객체의 각 속성이 매서드가 아니면 속성명과 값을 출력하고, 매서드 이면 호출하여 실행하는 코드
+        for (var key in person) {
+            if ((typeof person[key]) === 'function') {
+                person[key]();
+            } else {
+                console.log('속성명 : ' + key + ', 속성값 : ' + person[key])
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

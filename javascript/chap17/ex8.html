@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var name = '손흥민';
+
+        var person = {
+            name: 'lee',
+            age: 25,
+            gender: 'male',
+            eat: function () {
+                console.log(this.name + ' 밥먹어')
+            }
+        };
+
+        person.eat()
+
+        person.eat = '밥 먹었냐?';
+
+        console.log(person.eat);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

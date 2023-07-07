@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // [ 학생 성적 관리 프로그램 ]
+        // 5명의 학생들의 성적 정보를 입력받아 1등 학생의 학번, 이름, 국어, 영어, 수학, 과학 시험 점수와 총점 그리고 평균을 출력하는 코드
+        // 단, 객체 지향적 코드
+
+        var test = prompt('학번 이름 국 영 수 과', '20130000 이재현 70 70 70 70');
+        test = test.split(' ');
+
+        var record = {
+            id: String(record[0]),
+            name: String(record[1]),
+            korean: Number(record[2]),
+            english: Number(record[3]),
+            math: Number(record[4]),
+            science: Number(record[5]),
+
+            // 받은 점수의 총점과 평균을 구하는 코드
+            isRecord: function (totalScore, average) {
+                if (arguments.length === 0) {
+                    totalScore = this.totalScore;
+                    average = this.average;
+                }
+
+                let sum = totalScore;
+
+                for (let i = 0; i < average.length; i++) {
+                    sum += average[i];
+                }
+
+                let totalAverage = sum / (average.length + 1);
+
+                return totalAverage;
+            },
+
+            // 1등을 판별하는 코드
+            getFirstPlace: function () {
+
+                return result;
+            },
+
+            // 1등의 학번 이름 성적 총점 평균 출력 코드
+
+
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var timeoutId = setTimeout(function () {
+            console.log('setTimeout 실행')
+        }, 5000);
+
+        setTimeout(function () {
+            console.log('타이머 중지')
+            clearTimeout(timeoutId);
+        }, 3000);
+
+        // 멀티쓰레드로 비동기 처리 된 코드 (타이머는 항상 비동기)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //body 태그의 내용으로 날짜와 시간값을 계속해서 출력하는 코드
+
+        window.onload = function () {
+            var intervalId = setInterval(function () {
+                document.body.innerHTML += '<p>' + (new Date().toLocaleString()) + '</p>'
+            }, 1000)
+
+            setTimeout(function () {
+                clearInterval(intervalId);
+            }, 10000)
+        }
+
+    </script>
+</head>
+<body>
+<h1>현재 날짜와 시간</h1>
+</body>
+</html>
