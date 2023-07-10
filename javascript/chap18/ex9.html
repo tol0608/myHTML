@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr = [1, 2, 3, 4, 5];
+        var total = 0;
+
+        arr.forEach(function (value, idx) {
+            total += value;
+            arr[idx] = value ** 2;
+        });
+
+        console.log('total : ' + total);
+        console.log('arr : ' + arr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

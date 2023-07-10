@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // [ 학생 성적 관리 프로그램 ]
+        // 5명의 학생들의 성적 정보를 입력받아 1등 학생의 학번, 이름, 국어, 영어, 수학, 과학 시험 점수와 총점 그리고 평균을 출력하는 코드
+        // 단, 객체 지향적 코드
+        function getStudentInfo(sno, name, kor, eng, math, sci) {
+            var studentInfo = {
+                sno: sno,
+                name: name,
+                scores: [kor, eng, math, sci],
+
+                getTotal: function () {
+                    var total = 0;
+
+                    for (var i in this.scores) {
+                        total += this.scores[i];
+                    }
+                    return total;
+                },
+
+                getAverage: function () {
+                    return this.getTotal() / this.scores.length;
+                }
+            };
+
+            return studentInfo;
+        }
+
+        var studentInfos = ['s001 thsgmdals 70 70 70 70', 's002 김연경 95 95 95 95', 's003 류현진 80 80 80 80'];
+        var temp, first = 0;
+
+        for (var i in studentInfos) {
+            temp = studentInfos[i].split(' ');
+            temp[2] = Number(temp[2]);
+            temp[3] = Number(temp[3]);
+            temp[4] = Number(temp[4]);
+            temp[5] = Number(temp[5]);
+
+            temp = getStudentInfo(temp[0], temp[1], temp[2], temp[3], temp[4], temp[5]);
+            studentInfos[i] = temp;
+        }
+
+        for (var i = 1; i < studentInfos.length; i++) {
+            if (studentInfos[first].getTotal() < studentInfos[i].getTotal()) {
+                first = i;
+            }
+        }
+
+        var content = '<p> 1등 학생 정보 : ' + '학번 : ' + studentInfos[first].sno + ', 이름 : ' + studentInfos[first].name + ', 국어 : ' +
+            studentInfos[first].scores[0] + ', 영어 : ' + studentInfos[first].scores[1] + ', 수학 : ' +
+            studentInfos[first].scores[2] + ', 과학 : ' + studentInfos[first].scores[3] + ', 총점 : ' +
+            studentInfos[first].getTotal() + ', 평균 : ' + studentInfos[first].getAverage() + '</p>';
+
+        window.onload = function () {
+            document.body.innerHTML += content;
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

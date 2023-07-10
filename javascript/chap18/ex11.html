@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var lottoNums = [23, 42, 3, 11, 35, 19];
+
+        lottoNums.sort(function (left, right) {
+            return left - right // 양수 > 0 > 음수 / left > 0 > right
+                                // 오름차순 정렬 : 양수(자리바꿈해라), 0, 음수(자리바꿈X)
+        });
+
+        console.log(lottoNums);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

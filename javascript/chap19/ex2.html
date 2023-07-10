@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var windowObj = '';
+
+        for (var key in window) {
+            windowObj += '속성명 : ' + key + ', 속성값 : ' + window[key] + '<br>'
+        }
+
+        window.onload = function () {
+            document.body.innerHTML += windowObj;
+        }
+    </script>
+</head>
+<body>
+<h1>window 객체의 속성 값</h1>
+</body>
+</html>

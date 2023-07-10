@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        if (window.opener) {
+            var favoriteFruit = prompt('좋아하는 과일 입력', '사과');
+
+            window.opener.document.body.innerHTML += '<h4> 좋아하는 과일은 ' + favoriteFruit + ' 임 </h4>';
+            window.close();
+        } else {
+            alert('안돼요');
+        }
+
+    </script>
+</head>
+<body>
+<h1>EX7.html</h1>
+</body>
+</html>

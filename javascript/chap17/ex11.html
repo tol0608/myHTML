@@ -14,7 +14,7 @@
         };
 
 
-        // person 객체의 각 속성이 매서드가 아니면 속성명과 값을 출력하고, 매서드 이면 호출하여 실행하는 코드
+        // person 객체의 각 속성이 매서드가 아니면 속성명과 값을 출력하고, 매서드 이면 호출하여 실행하는 코드 (타입검사)
         for (var key in person) {
             if ((typeof person[key]) === 'function') {
                 person[key]();

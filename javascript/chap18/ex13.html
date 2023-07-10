@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var currDate = new Date();
+        var dayOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
+
+        var msg = +currDate.getFullYear() + ' 년 ' + (currDate.getMonth() + 1) + ' 월 ' + currDate.getDate() + ' 일 ' + currDate.getHours() + ' 시 ' + currDate.getMinutes() + ' 분 ' + currDate.getSeconds() + ' 초 ' + dayOfWeek(currDate.getDay())
+
+        console.log(msg);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
