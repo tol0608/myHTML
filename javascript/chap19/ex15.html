@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function handler() {
+            var userName = document.getElementById('userName');
+            var age = document.getElementById('age');
+            var ageVal = Number(age.value);
+
+            // alert('userName : ' + userName.value + ', age : ' + age.value + ' , ' + (typeof age.value));
+
+            alert('userName : ' + userName.value + ', age : ' + ageVal + ' , ' + (typeof ageVal));
+        }
+
+        function init() {
+            var click = document.getElementById('btn');
+            btn.onclick = handler;
+        }
+
+        window.onload = init;
+    </script>
+    <style>
+        #target {
+            width: 400px;
+            margin: 50px 0;
+            padding: 10px 10px;
+            border: 2px solid #2e3850;
+        }
+    </style>
+</head>
+<body>
+<h1>입력양식 값 읽기</h1>
+<br>
+
+<label for="userName">name</label>
+<input type="text" id="userName">
+<br>
+<label for="age">age</label>
+<input type="text" id="age">
+<br>
+<button id="btn">Click</button>
+</body>
+</html>

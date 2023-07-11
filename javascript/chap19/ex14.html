@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function backHandler() {
+            history.back();
+        }
+
+        function forwardHandler() {
+            history.forward();
+        }
+
+        function goHandler() {
+            var goNum = document.getElementById('goNum');
+            history.go(Number(goNum.value));
+
+            goNum.value = 0;
+        }
+        
+        // h4 length 태그의 내용으로 history 객체의 length 속성값을 출력
+        function init() {
+            var length = document.getElementById('length');
+            length.innerHTML += 'length : ' + history.length;
+
+            var back = document.getElementById('back');
+            back.onclick = backHandler;
+
+            var forward = document.getElementById('forward');
+            forward.onclick = forwardHandler;
+
+            var goBtn = document.getElementById('goBtn');
+            goBtn.onclick = goHandler;
+        }
+
+        window.onload = init;
+    </script>
+    <style>
+        #target {
+            width: 400px;
+            margin: 50px 0;
+            padding: 10px 10px;
+            border: 2px solid #2e3850;
+        }
+    </style>
+</head>
+<body>
+<h1>History Example</h1>
+<br>
+
+<h4 id="length"></h4>
+<button id="back">&lt;&lt;&lt;</button>
+<button id="forward">&gt;&gt;&gt;</button>
+<input type="number" id="goNum" min="-99" max="99" step="1" value="0">
+<button id="goBtn">Go</button>
+
+</body>
+</html>

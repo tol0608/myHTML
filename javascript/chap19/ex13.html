@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function handler() {
+            var target = document.getElementById('target');
+            var content = '';
+
+            content += 'navigator.cookieEnabled : ' + navigator.cookieEnabled + '<br>';
+            content += 'navigator.appName : ' + navigator.appName + '<br>';
+            content += 'navigator.appCodeName : ' + navigator.appCodeName + '<br>';
+            content += 'navigator.platform : ' + navigator.platform + '<br>';
+            content += 'navigator.appVersion : ' + navigator.appVersion + '<br>';
+            content += 'navigator.language : ' + navigator.language + '<br>';
+            content += 'navigator.userAgent : ' + navigator.userAgent + '<br>';
+            // userAgent 속성값이 유저가 브라우저에게 요청을 보낼시, userAgent 속성값을 함께 보냄
+
+            target.innerHTML += content;
+        }
+
+        function init() {
+            var btn = document.getElementById('btn');
+            btn.onclick = handler;
+        }
+
+        window.onload = init;
+    </script>
+    <style>
+        #target {
+            width: 400px;
+            margin: 50px 0;
+            padding: 10px 10px;
+            border: 2px solid #2e3850;
+        }
+    </style>
+</head>
+<body>
+<h1>Navigator Example1</h1>
+<br>
+
+<button id="btn">Navigator Info</button>
+
+<div id="target">
+    <h4>Navigator info</h4>
+</div>
+</body>
+</html>

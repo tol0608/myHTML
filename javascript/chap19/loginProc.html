@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LoginProc</title>
+    <script>
+        // login.html 로 부터 보내온 로그인 요청에 포함된 파라미터를 읽어 미리 약속된 id, pw와 비교하여 일치하면 환영메세지를 출력하고 일치하지 않으면 메세지와 함께 다시 login 페이지로 되돌리는 코드를 작성
+        const ID = 'lee';
+        const PW = '6789';
+
+        // 현재 URL에서 쿼리 문자열 파싱
+        var urlParams = new URLSearchParams(window.location.search);
+
+        // 파라미터 이름과 값을 읽어오기
+        var id = urlParams.get('id');
+        var pw = urlParams.get('pw');
+
+        // 읽어온 파라미터 값을 사용하여 로그인 처리
+        console.log('ID:', id);
+        console.log('PW:', pw);
+
+        if (ID === id && PW === pw) {
+
+        } else {
+            alert('아이디와 패스워드를 확인해보세요 :)')
+            window.open('login.html', '', '');
+        }
+
+    </script>
+</head>
+<body>
+<h1>환영합니다 :)</h1>
+<br>
+
+</body>
+</html>

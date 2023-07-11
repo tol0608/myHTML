@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 버튼을 클릭했을때, div target의 내용으로 버튼을 클릭했습니다 라고 메세지 출력하기
+        function clickHandler() {
+            // 2. 이벤트 핸들러 정의
+            var target = document.getElementById('target');
+            target.innerHTML += '버튼을 클릭함'
+        }
+
+        function clearHandler() {
+            var target = document.getElementById('target');
+            target.innerHTML = ''
+        }
+
+        function init1() {
+            // 1. 이벤트가 발생한 대상의 객체를 가져옴
+            var click = document.getElementById('click');
+            var clear = document.getElementById('clear');
+
+            // 3. 이벤트 속성을 이용하여 이벤트와 이벤트 핸들러를 연결함
+            click.onclick = clickHandler;
+            clear.onclick = clearHandler;
+        }
+        window.onload = init1;
+    </script>
+</head>
+<body>
+<h1>Event Example3</h1>
+<br>
+<button id="click">click</button>
+<button id="clear">clear</button>
+<div id="target"></div>
+</body>
+</html>

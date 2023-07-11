@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function handler() {
+            var target = document.getElementById('target');
+            var content = '';
+
+            content += 'screen.width : ' + screen.width + '<br>';
+            content += 'screen.height : ' + screen.height + '<br>';
+            content += 'screen.availwidth : ' + screen.availWidth + '<br>';
+            content += 'screen.availheight : ' + screen.availHeight + '<br>';
+            content += 'screen.colorDepth : ' + screen.colorDepth + '<br>';
+            content += 'screen.pixelDepth : ' + screen.pixelDepth + '<br>';
+            content += 'screen.orientation : ' + screen.orientation + '<br>';
+
+            target.innerHTML += content;
+        }
+
+        function init() {
+            var btn = document.getElementById('btn');
+            btn.onclick = handler;
+        }
+
+        window.onload = init;
+    </script>
+</head>
+<body>
+<h1>Screen Example</h1>
+<br>
+<button id="btn">Screen Info</button>
+
+<div id="target">
+    <h4>Navigator info</h4>
+</div>
+</body>
+</html>
