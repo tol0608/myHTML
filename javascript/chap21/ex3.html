@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function init() {
+            var headers = document.getElementsByTagName('h3');
+
+            for (var key in headers) {
+                console.log('key : ' + key + ', value : ' + headers[key]);
+
+            }
+        }
+
+        window.onload = init;
+    </script>
+</head>
+<body>
+<h1></h1>
+<hr>
+<h3>header</h3>
+<h3>header</h3>
+<h3>header</h3>
+
+</body>
+</html>

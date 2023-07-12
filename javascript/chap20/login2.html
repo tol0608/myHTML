@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script>
+        // 사용자가 ID와 PW를 입력한 후 로그인 버튼을 클릭하면 사용자가 입력한 id와 pw를 포함한 새로운 요청을 포함한 로그인 요청을 loginProc.html로 보내는 코드
+
+        function loginHandler() {
+            var id = document.getElementById('id');
+            var pw = document.getElementById('pw');
+            var url = 'loginProc2.html';
+            url += '?id=' + id.value;
+            url += '&pw=' + pw.value;
+
+            id.value = '';
+            pw.value = '';
+            location.assign(url);
+        }
+
+        function init() {
+            var login = document.getElementById('login');
+            login.onclick = loginHandler;
+        }
+
+        window.onload = init;
+
+    </script>
+</head>
+<body>
+<h1>로그인</h1>
+<br>
+<label for="id">ID</label>
+<input type="text" id="id">
+<label for="pw">PASSWORD</label>
+<input type="text" id="pw">
+<button id="login">Login</button>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LoginProc</title>
+    <script src="./js/parameter.js"></script>
+    <script>
+        // login.html 로 부터 보내온 로그인 요청에 포함된 파라미터를 읽어 미리 약속된 id, pw와 비교하여 일치하면 환영메세지를 출력하고 일치하지 않으면 메세지와 함께 다시 login 페이지로 되돌리는 코드를 작성
+        const ID = '이재현';
+        const PW = '6789';
+        var parameters = getParameters(location.search);
+
+        function loginProc() {
+            var result = false;
+
+            if (parameters.getParamValue('id') === ID && parameters.getParamValue('pw') === PW) {
+                result = true;
+            }
+            return result;
+        }
+
+        function init() {
+            if (loginProc()) {
+                document.body.innerHTML += '<h4>' + parameters.getParamValue('id') + '님의 환영을 반가워함</h4>'
+            } else {
+                alert('로그인 실패. ID / PW 확인 하셈');
+                location.href = 'login2.html';
+            }
+        }
+
+
+        window.onload = init;
+    </script>
+</head>
+<body>
+<h1>환영합니다 :)</h1>
+<br>
+
+</body>
+</html>

@@ -15,15 +15,11 @@
         var id = urlParams.get('id');
         var pw = urlParams.get('pw');
 
-        // 읽어온 파라미터 값을 사용하여 로그인 처리
-        console.log('ID:', id);
-        console.log('PW:', pw);
-
         if (ID === id && PW === pw) {
 
         } else {
             alert('아이디와 패스워드를 확인해보세요 :)')
-            window.open('login.html', '', '');
+            location.href = 'login.html';
         }
 
     </script>

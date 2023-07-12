@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    h1 {
+        text-transform: uppercase;
+    }
+</style>
+<script>
+    // 인코딩 디코딩 예제
+    function convertHandler() {
+        var userName = document.getElementById('userName');
+        var encoding = document.getElementById('encoding');
+        var decoding = document.getElementById('decoding');
+
+        var encodeUserName = encodeURIComponent(userName.value);
+        var decodeUserName = decodeURIComponent(encodeUserName);
+
+        encoding.innerHTML += encodeUserName;
+        decoding.innerHTML += decodeUserName;
+    }
+
+    function init() {
+        var conver = document.getElementById('convert');
+
+        conver.onclick = convertHandler;
+    }
+
+    window.onload = init;
+</script>
+<body>
+<h1>encoding / decoding</h1>
+<label for="userName">name</label>
+<input type="text" id="userName">
+<button id="convert">convert</button>
+
+<hr>
+<div id="encoding">encoding :</div>
+<div id="decoding">decoding :</div>
+
+</body>
+</html>

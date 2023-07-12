@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function init() {
+            // var headers = document.getElementById('header');
+            var headers = document.getElementsByTagName('h4');
+            var headers = document.getElementsByName('fruits');
+            // 유사배열객체
+
+            for (var i = 0; i < headers.length; i++) {
+                // console.log(headers[i].innerHTML);
+                console.log(headers[i].value);
+            }
+            console.log(headers)
+        }
+
+        window.onload = init;
+    </script>
+</head>
+<body>
+<h1></h1>
+<hr>
+<h3 class="header">Header1</h3>
+<h3>Header2</h3>
+<h4 class="header">Header3</h4>
+<h4>Header4</h4>
+<input type="radio" name="fruits" value="apple">
+<input type="radio" name="fruits" value="banana">
+
+</body>
+</html>

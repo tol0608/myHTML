@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 날짜를 입력받아 요일을 반환하는 코드 작성
+        // prompt 함수 금지
+        function btnHandler() {
+            var totalDays = 0;
+            var monthLastDays = [-1, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            var week = ['일', '월', '화', '수', '목', '금', '토'];
+            var ymd = document.querySelector('#ymd').value;
+            ymd = ymd.split(' ');
+
+            for (var i = 1; i < ymd.length; i++) {
+                ymd[i] = Number(ymd[i]);
+            }
+
+            for (var i = 1; i < ymd[0]; i++) {
+                if (i % 4 != 0 && i % 100 != 0 || i % 400 != 0) {
+                    totalDays += 366;
+                } else {
+                    totalDays += 365;
+                }
+            }
+
+            if (ymd[0] % 4 == 0 && ymd[0] % 100 != 0 || ymd[0] % 400 == 0) {
+                monthLastDays[2] = 29;
+            }
+
+            for (var i = 0; i < ymd[1]; i++) {
+                totalDays += monthLastDays[i];
+            }
+
+            totalDays += ymd[2];
+            document.body.innerHTML += '<p> 입력하신 ' + ymd[0] + '년 ' + ymd[1] + '월 ' + ymd[2] + '일은 ' + week[totalDays % 7] + '요일 입니다. </p>';
+        }
+
+        function init() {
+            var btn = document.querySelector('#btn');
+            btn.onclick = btnHandler;
+        }
+
+        window.onload = init;
+    </script>
+</head>
+<body>
+<h1>입력받은 날짜 요일로 바꾸기</h1>
+<hr>
+<label for="ymd">날짜 입력</label>
+<input type="text" id="ymd">
+<button id="btn">날짜 나와라</button>
+
+
+</body>
+</html>

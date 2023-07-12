@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function init() {
+            var headers = document.querySelectorAll('.header');
+
+            for (var i = 0; i < headers.length; i++) {
+                console.log(headers[i].innerHTML);
+            }
+
+        }
+
+        window.onload = init;
+    </script>
+</head>
+<body>
+<h1></h1>
+<hr>
+<h3 class="header">Header1</h3>
+<h4>Header2</h4>
+<h3>Header3</h3>
+<h4 class="header">Header3</h4>
+
+</body>
+</html>

@@ -10,15 +10,15 @@
             var id = document.getElementById('id').value;
             var pw = document.getElementById('pw').value;
 
-            var idArray = []; // ID 값을 저장할 배열 선언
-            var pwArray = []; // PW 값을 저장할 배열 선언
+            var idArray = []; // id 배열
+            var pwArray = []; // pw 배열
 
-            // ID 값을 배열에 추가
+            // id 배열에 추가
             id.split('').forEach(function (value) {
                 idArray.push(String(value));
             });
 
-            // PW 값을 배열에 추가
+            // pw 배열에 추가
             pw.split('').forEach(function (value) {
                 pwArray.push(Number(value));
             });
