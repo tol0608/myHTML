@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function clearHandler() {
+            var target = document.querySelector('#target');
+            var color = document.querySelector('#color');
+            var back = document.querySelector('#back');
+            var font = document.querySelector('#font');
+            var size = document.querySelector('#size');
+
+
+            target.style.color = '#000000';
+            target.style.backgroundColor = '#ffffff';
+            target.style.fontSize = '12' + 'pt';
+
+            color.value = '#000000';
+            back.value = '#ffffff';
+            font.value = '12';
+            size.value = '12';
+        }
+
+        function applyHandler() {
+            var target = document.querySelector('#target');
+            var color = document.querySelector('#color');
+            var back = document.querySelector('#back');
+            var font = document.querySelector('#font');
+
+            target.style.color = color.value;
+            target.style.backgroundColor = back.value;
+            target.style.fontSize = font.value + 'pt';
+        }
+
+        function sizeHandler() {
+            var fontsize = document.querySelector('#font');
+            var size = document.querySelector('#size');
+
+            size.innerHTML = fontsize.value;
+        }
+
+        function init() {
+            document.querySelector('#apply').onclick = applyHandler;
+            document.querySelector('#clear').onclick = clearHandler;
+            document.querySelector('#font').onclick = sizeHandler;
+
+        }
+
+        window.onload = init;
+    </script>
+    <style>
+        * {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        #target {
+            width: 400px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            margin-top: 20px;
+            border: 1px solid #2e3850;
+        }
+    </style>
+</head>
+<body>
+<h1>동적 스타일 적용</h1>
+<br>
+<label for="color">글꼴 색상</label>
+<input id="color" type="color" value="#000000">
+<label for="back">배경 색상</label>
+<input id="back" type="color" value="#ffffff">
+<label for="font">폰트 크기</label>
+<input id="font" type="range" min="8" max="30" value="12">
+<span id="size">12</span>
+<button id="apply">apply</button>
+<button id="clear">적용해제</button>
+
+<br>
+<div id="target">동적 스타일 적용 결과</div>
+
+</body>
+</html>

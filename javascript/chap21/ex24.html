@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function init() {
+            var parent = document.querySelector('#parent');
+
+            var header1 = document.createElement('h1');
+            header1.innerHTML= 'header3'
+            parent.insertBefore(header1,parent.children[2]);
+
+            var header2 = document.createElement('h1');
+            header2.innerHTML= 'header6'
+            parent.insertBefore(header2, child);
+        }
+
+        window.onload = init;
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="parent">
+    <h1>header1</h1>
+    <h1>header2</h1>
+    <h1>header4</h1>
+    <h1>header5</h1>
+</div>
+</body>
+</html>

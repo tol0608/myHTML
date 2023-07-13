@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function init() {
+            var img = document.createElement('img');
+            img.setAttribute('src', './images/Penguins.jpg');
+            img.setAttribute('width', '500');
+            img.setAttribute('data-origin', '사용자 속성');
+            // ^ HTML5에서 추가된 커스텀 데이터 속성 / 규칙 -> 'data-' 로 시작할것
+
+            document.body.appendChild(img);
+        }
+
+        window.onload = init;
+    </script>
+</head>
+<body>
+
+</body>
+</html>

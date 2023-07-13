@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var images = Array.from(document.querySelectorAll("#target img"));
+        var intervalId;
+
+        function rotateImages() {
+            var firstImage = images.shift();
+            images.push(firstImage);
+
+            intervalId = setInterval(rotateImages, 1000);
+        }
+
+        function stopRotation() {
+            clearInterval(intervalId);
+        }
+
+        function init() {
+            document.getElementById('start').onclick = rotateImages;
+            document.getElementById('stop').onclick = stopRotation;
+        }
+
+        window.onload = init;
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #target {
+            margin: 0;
+            padding: 0;
+            border-spacing: 0;
+            display: flex;
+        }
+
+        img {
+            width: 300px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<h3>rotation image</h3>
+<br>
+<button id="start">시작</button>
+<button id="stop">중지</button>
+<div id="target">
+    <img src="./images/Penguins.jpg">
+    <img src="./images/Jellyfish.jpg">
+    <img src="./images/Chrysanthemum.jpg">
+    <img src="./images/Desert.jpg">
+    <img src="./images/Hydrangeas.jpg">
+    <img src="./images/Koala.jpg">
+    <img src="./images/Lighthouse.jpg">
+    <img src="./images/Tulips.jpg">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 날짜를 입력받아 요일을 반환하는 코드 작성
+        // prompt 함수 금지
+        function handler() {
+            var date = document.querySelector('#date');
+            var target = document.querySelector('#target');
+            var userDate = new Date(date.value);
+            var dayOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
+
+            target.innerHTML = '결과 : ' + date.value + '의 요일은 ' + (dayOfWeek[userDate.getDay()] + '요일임다');
+
+            date.value = '2023-07-13';
+        }
+
+        function init() {
+            document.querySelector('#btn').onclick = handler;
+        }
+
+        window.onload = init;
+    </script>
+</head>
+<body>
+<h1>입력받은 날짜 요일로 바꾸기</h1>
+<hr>
+<label for="date">날짜 입력</label>
+<input type="date" id="date" value="2023-07-13">
+<button id="btn">날짜 나와라</button>
+
+<h4 id="target">결과 : </h4>
+
+</body>
+</html>

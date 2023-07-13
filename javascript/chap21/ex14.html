@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function init() {
+            var img = document.createElement('img');
+            img.src = './images/Penguins.jpg';
+            img.width = '500';
+            img['data-origin'] = '사용자 속성';
+
+            // 요소 대상으로는 속성을 동적으로 수정하는거 금지
+
+
+            document.body.appendChild(img);
+
+        }
+
+        window.onload = init;
+    </script>
+</head>
+<body>
+
+</body>
+</html>

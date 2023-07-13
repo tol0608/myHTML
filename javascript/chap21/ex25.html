@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function init() {
+            var remove = document.querySelector('#remove');
+
+            remove.parentNode.removeChild(remove);
+        }
+
+        window.onload = init;
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="parent">
+    <h1>header1</h1>
+    <h1>header2</h1>
+    <h1 id="remove">header3</h1>
+    <h1>header4</h1>
+</div>
+</body>
+</html>
