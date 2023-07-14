@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function childHandler(event) {
+            alert('child');
+
+            event.stopPropagation();
+            // 부모의 이벤트를 상속받지 않게 해줌 / 이벤트 버블링 X
+        }
+
+        function parentHandler() {
+            alert('parent');
+
+
+        }
+
+        function init() {
+            document.querySelector('#child').onclick = childHandler;
+            document.querySelector('#parent').onclick = parentHandler;
+        }
+
+        window.onload = init;
+
+    </script>
+    <style>
+        #parent {
+            width: 300px;
+            height: 200px;
+            margin: 50px auto;
+            padding: 100px;
+            border: 5px solid #2e3850;
+        }
+
+        #child {
+            width: 100px;
+            height: 100px;
+            border: 5px solid #00b900;
+        }
+    </style>
+</head>
+<body>
+<h1>hello, world</h1>
+<h4>이벤트 버블링</h4>
+
+<div id="parent">
+    <div id="child"></div>
+</div>
+</body>
+</html>

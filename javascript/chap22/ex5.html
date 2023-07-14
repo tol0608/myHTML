@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var btn1;
+
+        function aHandler() {
+            var clickA = document.querySelector('#counterA');
+
+            clickA.innerHTML = parseInt(clickA.innerHTML) + 1;
+        }
+
+        function bHandler() {
+            var clickB = document.querySelector('#counterB');
+
+            clickB.innerHTML = parseInt(clickB.innerHTML) + 1
+
+            btn1.onclick();
+        }
+
+        function init() {
+            btn1 = document.querySelector('#btn1');
+            btn1.onclick = aHandler;
+
+            document.querySelector('#btn2').onclick = bHandler;
+
+        }
+
+        window.onclick = init;
+    </script>
+</head>
+<body>
+<h1>hello, world</h1>
+<h3>이벤트 강제발생</h3>
+<hr>
+<button id="btn1">click A</button>
+<button id="btn2">click B</button>
+<hr>
+<h3>Click A : <span id="counterA">0</span></h3>
+<h3>Click B : <span id="counterB">0</span></h3>
+
+</body>
+</html>

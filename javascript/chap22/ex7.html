@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function clickHandler() {
+            alert(this.innerHTML);
+
+        }
+
+        function init() {
+            document.querySelector('#header').onclick = clickHandler;
+        }
+
+        window.onload = init;
+    </script>
+</head>
+<body>
+<h1 id="header">hello, world</h1>
+
+</body>
+</html>

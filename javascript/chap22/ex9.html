@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        
+        function daumHandler() {
+            alert('다음 링크 클릭함');
+        }
+        function init() {
+            document.querySelector('#daum').onclick = daumHandler;
+        }
+
+        window.onload = init;
+    </script>
+</head>
+<body>
+<h1 id="header">hello, world</h1>
+<h3>디폴트 이벤트 확인</h3>
+
+<a href="http://naver.com" target="_blank">네이버</a>
+<a href="http://daum.net" target="_blank" id="daum">다음</a>
+</body>
+</html>

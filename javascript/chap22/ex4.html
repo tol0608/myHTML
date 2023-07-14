@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var btn;
+
+        function handler() {
+            alert('버튼을 클릭함');
+            btn.onclick = null;
+        }
+
+        function init() {
+            btn = document.querySelector('#btn');
+            btn.onclick = handler;
+        }
+
+        window.onclick = init;
+    </script>
+</head>
+<body>
+<h1>hello, world</h1>
+<h3>임시 이벤트 처리</h3>
+<br>
+<button id="btn">click</button>
+</body>
+</html>

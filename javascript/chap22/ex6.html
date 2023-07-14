@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var myName = '손흥민';
+
+        function func() {
+            alert('func() 함수호출')
+        }
+
+        window.alert(window.myName);
+        window.func();
+
+        function func2() {
+            console.log(this)
+        }
+
+        func2();
+    </script>
+</head>
+<body>
+<h1>hello, world</h1>
+
+
+</body>
+</html>

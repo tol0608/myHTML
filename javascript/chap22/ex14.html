@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var btn;
+
+        function clickHandler1() {
+            alert('clickHandler1');
+        }
+
+        function clickHandler2() {
+            alert('clickHandler2');
+
+            btn.removeEventListener('click', clickHandler2);
+            // 첫 클릭시에만 handler2가 동작하고, 이후부터는 handler2가 동작하지 않음
+        }
+
+        function init() {
+            btn = document.querySelector('#btn');
+            btn.addEventListener('click', clickHandler1);
+            btn.addEventListener('click', clickHandler2);
+        }
+
+        window.onload = init;
+
+    </script>
+    <style>
+    </style>
+</head>
+<body>
+<h1>hello, world</h1>
+<h4>다중 이벤트 연결</h4>
+
+<button id="btn">버튼</button>
+</body>
+</html>
