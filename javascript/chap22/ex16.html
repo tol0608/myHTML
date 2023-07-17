@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+            1. 이벤트 연결 방식을 표준 이벤트 연결 방식으로 변경
+            2. 변경된 코드를 실행하여 디폴트 제거 테스트
+            3. 표준 이벤트 방식에서는 이벤트 제거를 위해 preventDefault() 메서드를 사용
+        */
+
+        function handler(event) {
+            var id = document.querySelector('#id');
+            var pw = document.querySelector('#pw');
+            var newPw = document.querySelector('#newPw');
+            var rePw = document.querySelector('#rePw');
+            var msg = document.querySelector('#msg');
+
+            if (id.value.length >= 3 && pw.value.length >= 3 && newPw.value.length >= 3 && rePw.value.length >= 3 && pw.value !== newPw.value && newPw.value === rePw.value) {
+
+            } else {
+                id.value = '';
+                pw.value = '';
+                newPw.value = '';
+                rePw.value = '';
+
+                msg.innerHTML = '실패';
+                msg.style.color = 'red';
+                id.focus();
+
+                event.preventDefault();
+            }
+        }
+
+        function init() {
+            document.querySelector('#changePw').addEventListener('submit', handler);
+        }
+
+        window.addEventListener('load', init);
+
+    </script>
+    <style>
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+<h1>hello, world</h1>
+<h3>비밀번호 변경</h3>
+<form action="changePw.html" id="changePw">
+    <fieldset>
+        <label for="id">ID</label>
+        <input type="text" id="id" name="id"><br>
+
+        <label for="pw">이전 PW</label>
+        <input type="password" id="pw" name="pw"><br>
+
+        <label for="newPw">변경 pw</label>
+        <input type="password" id="newPw" name="newPw"><br>
+
+        <label for="rePw">변경 pw 확인</label>
+        <input type="password" id="rePw"><br><br>
+
+        <input type="submit" value="변경" id="submit">
+        <span id="msg"></span>
+    </fieldset>
+
+</form>
+</body>
+</html>

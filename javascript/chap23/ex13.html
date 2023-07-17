@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        사용자에게 언제나 자연수를 입력받을수있는 코드
+        단, 예외처리방법을 이용
+        */
+        // var arr = ['hello', '', null, 'false', '3.14', '-2', '3'];
+        //
+        // for (var i in arr) {
+        //     console.log(arr[i] + ' : ' + Number(arr[i]))
+        // }
+        var num;
+
+        function getNnumber(num) {
+            num = Number(num);
+
+            if (isNaN(num) || num < 1 || num !== parseInt(num)) {
+                throw new Error('자연수가 아님');
+            }
+            return num;
+        }
+
+        while (true) {
+            num = prompt('자연수', 1);
+
+            try {
+                num = getNnumber(num);
+                alert('자연수임')
+                break;
+            } catch (e) {
+                alert(e.message);
+            }
+        }
+
+    </script>
+</head>
+<body>
+<h1></h1>
+<hr>
+</body>
+</html>

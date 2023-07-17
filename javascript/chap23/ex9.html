@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function getCircleArea(radius) {
+            if (radius <= 0) {
+                throw '원의 반지름은 0 보다 커야함'
+                // 암시적 에러객체
+            }
+
+            return radius * radius * 3.141592;
+        }
+
+        var radius = prompt('원의 반지름 입력', 5);
+        radius = Number(radius);
+        alert('원의 넓이는 ' + getCircleArea(radius))
+
+    </script>
+</head>
+<body>
+<h1></h1>
+<hr>
+</body>
+</html>

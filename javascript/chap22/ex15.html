@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function handler() {
+            alert(this)
+        }
+
+        function init() {
+            document.querySelector('#header').onclick = handler;
+            document.querySelector('#btn').onclick = handler;
+
+            handler();
+        }
+
+        window.onload = init;
+
+    </script>
+    <style>
+    </style>
+</head>
+<body>
+<h1>hello, world</h1>
+<hr>
+<h1 id="header">Header</h1>
+<button id="btn">btn</button>
+
+</body>
+</html>
