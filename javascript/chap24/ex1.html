@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Tables</title>
+    <style>
+
+        #persons {
+            display: flex;
+        }
+
+        .person {
+            border: 2px solid #0c3268;
+            padding: 10px 5px;
+            margin-right: 20px;
+        }
+
+        p {
+            border: 1px dot-dash #2e3850;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        span {
+            font-weight: normal;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Table</h1>
+<div id="persons">
+    <!-- 스크립트로 자동으로 생성될 템플릿 -->
+</div>
+
+<script>
+    var personCSV = '손흥민, 남자, 31, 축구 \n';
+    personCSV += '김연아, 여자, 32, 피겨 \n';
+    personCSV += '류현진, 남자, 37, 야구 \n';
+
+    // CSV 데이터 파싱하여 배열로 변환
+    var rows = personCSV.trim().split('\n');
+
+    // 각 데이터마다 테이블 생성 및 삽입
+    for (var i = 0; i < rows.length; i++) {
+        var columns = rows[i].split(',');
+        var personHTML = '<div class="person">';
+        var attributes = ['이름', '성별', '나이', '종목'];
+
+        for (var j = 0; j < columns.length; j++) {
+            personHTML += '<p>' + attributes[j] + ' : <span>' + columns[j].trim() + '</span></p>';
+        }
+
+        personHTML += '</div>';
+        document.querySelector('#persons').innerHTML += personHTML;
+    }
+
+</script>
+</body>
+</html>

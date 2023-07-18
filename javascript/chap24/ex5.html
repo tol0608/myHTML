@@ -1,0 +1,50 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var xhr = new XMLHttpRequest();
+
+        function sendCsvHandler() {
+            var target = document.querySelector('.target');
+
+            xhr.open('GET', 'persons.csv', false);
+            xhr.send();
+
+            target.innerHTML = xhr.responseText;
+        }
+
+        function sendJsonHandler() {
+            var target = document.querySelector('.target');
+
+            xhr.open('GET', 'persons.json', false);
+            xhr.send();
+
+            target.innerHTML = xhr.responseText;
+        }
+
+        function init() {
+            document.querySelector('.sendCSV').addEventListener('click', sendCsvHandler);
+            document.querySelector('.sendJSON').addEventListener('click', sendJsonHandler);
+
+        }
+
+        document.addEventListener('DOMContentLoaded', init); // Corrected event for page load
+
+    </script>
+    <style>
+        .target {
+            width: 500px;
+            height: 200px;
+            border: 2px solid #2e3850;
+            padding: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>AJAX Example1</h1>
+<button class="sendCSV">Send CSV</button>
+<button class="sendJSON">Send JSON</button>
+
+<div class="target"></div>
+</body>

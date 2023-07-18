@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Tables</title>
+    <style>
+
+        .persons {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .person {
+            border: 2px solid #2e3850;
+            padding: 20px;
+            margin-right: 30px;
+        }
+
+        .person:last-child {
+            margin-right: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+<h1>Table</h1>
+
+<button class="send">AJAX Go!</button>
+<button class="clear">Clear</button>
+
+<div class="persons">
+</div>
+
+<script>
+    var xhr = new XMLHttpRequest();
+
+    function parsePersonCSV(csv) {
+        var persons = csv.split('\n');
+
+        for (var i = 0; i < persons.length; i++) {
+            var content = '';
+            var personInfo = persons[i].split(',').map(item => item.trim());
+
+            content += '<p>이름 : ' + personInfo[0] + '</p>';
+            content += '<p>성별 : ' + personInfo[1] + '</p>';
+            content += '<p>나이 : ' + personInfo[2] + '</p>';
+            content += '<p>분야 : ' + personInfo[3] + '</p>';
+
+            var div = document.createElement('div');
+            div.setAttribute('class', 'person');
+            div.innerHTML = content;
+
+            persons[i] = div;
+        }
+        return persons;
+    }
+
+    function init() {
+        xhr.open('GET', 'persons.csv', true); // 비동기 요청으로 수정
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                var personChild = parsePersonCSV(xhr.responseText);
+                var personsContainer = document.querySelector('.persons');
+
+                for (var i = 0; i < personChild.length; i++) {
+                    personsContainer.appendChild(personChild[i]); // 각 div 엘리먼트를 추가해야 함
+                }
+            }
+        };
+        xhr.send();
+    }
+
+    window.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

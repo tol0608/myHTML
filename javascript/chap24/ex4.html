@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+
+</head>
+<body>
+<h1>JSON</h1>
+
+<div class="jsonStr"></div>
+
+<script>
+    var personsJSON = [
+        {
+            name: '손흥민',
+            gender: '남자',
+            age: 31,
+            field: '축구'
+
+        },
+        {
+            name: '류현진',
+            gender: '남자',
+            age: 37,
+            field: '야구'
+        },
+        {
+            name: '김연아',
+            gender: '여자',
+            age: 34,
+            field: '피겨'
+        }
+    ];
+
+    function parsePersonsJSON(jsonStr) {
+        var persons = JSON.parse(jsonStr);
+
+        for (var i in persons) {
+
+            content += '<p>이름 : ' + person[i].name + '</p>';
+            content += '<p>성별 : ' + person[i].gender + '</p>';
+            content += '<p>나이 : ' + person[i].age + '</p>';
+            content += '<p>분야 : ' + person[i].field + '</p>';
+
+            var div = document.createElement('div');
+            div.setAttribute('class', 'person');
+            div.innerHTML = content;
+
+            persons[i] = div;
+        }
+        return persons;
+    }
+
+    function init() {
+        var personsData = parsePersonsJSON(personsJSON);
+        var persons = document.querySelector('.persons');
+
+        for (var i in personsData) {
+            persons.appendChild(personsData[i]);
+        }
+
+    }
+
+    window.addEventListener('load', init);
+</script>
+</body>
+</html>

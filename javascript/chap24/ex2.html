@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+
+</head>
+<body>
+<h1>JSON</h1>
+
+<h4>JSON 문자열</h4>
+<div class="jsonStr"></div>
+<h4>JSON 변환</h4>
+<div class="jsonObj"></div>
+
+<script>
+    var person = {
+        name: '손흥민',
+        gender: '남자',
+        age: 31,
+        field: ['축구', '야구'],
+        friend: {
+            name: '류현진',
+            gender: '남자',
+            age: 31,
+            field: '축구'
+        }
+    }
+
+    function init() {
+        var jsonStr = document.querySelector('.jsonStr');
+        var jsonObj = document.querySelector('.jsonObj');
+
+        var jsonData = JSON.stringify(person);
+        jsonStr.innerHTML = jsonData;
+
+        var jsonPerson = JSON.parse(jsonData);
+        var content = '';
+
+        for (var key in jsonPerson) {
+            if (typeof (jsonPerson[key]) !== 'object') {
+                content += key + ' : ' + jsonPerson[key] + '<br>';
+
+            }
+        }
+        jsonObj.innerHTML = content;
+    }
+
+    window.onload = init;
+</script>
+</body>
+</html>
