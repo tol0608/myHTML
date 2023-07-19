@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <title></title>
+    <meta charset="UTF-8"/>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener('readystatechange', ajaxHandler);
+
+        function ajaxHandler() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var personsChild = parsePersonsXML(xhr.responseXML);
+                var persons = document.querySelector('#persons');
+                persons.innerHTML = '';
+
+                for (var i in personsChild) {
+                    persons.appendChild(personsChild[i])
+                }
+            }
+        }
+
+        function parsePersonsXML(personsXML) {
+            var persons = personsXML.querySelectorAll('person');
+            var personsArr = [];
+
+            for (var i = 0; i < persons.length; i++) {
+                var content = '<h4>이름: ' + persons[i].children[0].innerHTML + '</h4>';
+                content += '<h4>성별: ' + persons[i].children[1].innerHTML + '</h4>';
+                content += '<h4>나이: ' + persons[i].children[2].innerHTML + '</h4>';
+                content += '<h4>분야: ' + persons[i].children[3].innerHTML + '</h4>';
+
+                var div = document.createElement('div');
+                div.setAttribute('class', 'person');
+                div.innerHTML = content;
+
+                personsArr.push(div);
+            }
+
+            return personsArr;
+        }
+
+        function sendHandler() {
+            xhr.open('GET', 'persons.xml', true);
+            xhr.send();
+        }
+
+        function clearHandler() {
+            document.querySelector('#persons').innerHTML = '';
+        }
+
+        function init() {
+            document.querySelector('#send').addEventListener('click', sendHandler);
+            document.querySelector('#clear').addEventListener('click', clearHandler);
+        }
+
+        window.addEventListener('load', init);
+    </script>
+    <style>
+        .person {
+            width: 200px;
+            border: 2px solid gray;
+            padding: 20px;
+            margin: 20px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+<h1>인물 정보</h1>
+<hr/>
+
+<button id="send">AJAX Go!</button>
+<button id="clear">Clear!</button>
+
+<div id="persons"></div>
+</body>
+</html>

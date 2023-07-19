@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <title></title>
+    <meta charset="UTF-8"/>
+    <script>
+        var xhr = new XMLHttpRequest();
+
+        function sendHandler() {
+            xhr.open('GET', 'persons.json', true);
+
+            var startTime = new Date().getTime();
+
+            xhr.send();
+            var endTime = new Date().getTime();
+
+            alert('responseText : ' + xhr.responseText);
+            alert('지연시간 : ' + (endTime - startTime));
+        }
+
+
+        function init() {
+            document.querySelector('#send').addEventListener('click', sendHandler);
+        }
+
+        window.addEventListener('load', init);
+    </script>
+</head>
+
+<body>
+<h1>Send 메서드 지연 시간</h1>
+<hr/>
+
+<button id="send">AJAX Go!</button>
+</body>
+</html>
